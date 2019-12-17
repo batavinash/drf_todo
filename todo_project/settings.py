@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
+    'apis.apps.ApisConfig',
+    'todos.apps.TodosConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -66,6 +69,13 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+        'DEFAULT_PERMISSION_CLASSES': [
+                'rest_framework.permissions.AllowAny',
+            ]
+        }
+
 
 WSGI_APPLICATION = 'todo_project.wsgi.application'
 
